@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+build/
+smoke.png
+sounds/*.wav
+.DS_Store

@@ -1,0 +1,266 @@
+{
+  "screen": {
+    "width": 390,
+    "height": 700,
+    "fps": 60,
+    "step": 0.0166666667
+  },
+  "duration": 120.0,
+  "hero": {
+    "speed": 120.0,
+    "hp": 100.0,
+    "hit_radius": 12.0,
+    "magnet": 60.0,
+    "pickup_radius": 16.0,
+    "start_weapon": "spark"
+  },
+  "weapons": {
+    "spark": {
+      "name": "Spark Wand",
+      "desc": "Fires a spark at the nearest enemy.",
+      "max_level": 5,
+      "projectile_speed": 400.0,
+      "levels": [
+        {
+          "damage": 10.0,
+          "cooldown": 0.8,
+          "sparks": 1
+        },
+        {
+          "damage": 13.0,
+          "cooldown": 0.72,
+          "sparks": 1
+        },
+        {
+          "damage": 16.0,
+          "cooldown": 0.64,
+          "sparks": 2
+        },
+        {
+          "damage": 19.0,
+          "cooldown": 0.56,
+          "sparks": 2
+        },
+        {
+          "damage": 22.0,
+          "cooldown": 0.48,
+          "sparks": 3
+        }
+      ],
+      "short": "Spark"
+    },
+    "blades": {
+      "name": "Spin Blades",
+      "desc": "Blades circle you and cut what they touch.",
+      "max_level": 5,
+      "radius": 60.0,
+      "turn_seconds": 1.5,
+      "blade_hit_cooldown": 0.5,
+      "levels": [
+        {
+          "damage": 8.0,
+          "blades": 2
+        },
+        {
+          "damage": 11.0,
+          "blades": 3
+        },
+        {
+          "damage": 14.0,
+          "blades": 3
+        },
+        {
+          "damage": 17.0,
+          "blades": 4
+        },
+        {
+          "damage": 20.0,
+          "blades": 4
+        }
+      ],
+      "short": "Spin"
+    },
+    "ring": {
+      "name": "Holy Ring",
+      "desc": "Burns everything close to you.",
+      "max_level": 5,
+      "levels": [
+        {
+          "damage": 5.0,
+          "radius": 50.0,
+          "cooldown": 0.5
+        },
+        {
+          "damage": 7.0,
+          "radius": 60.0,
+          "cooldown": 0.5
+        },
+        {
+          "damage": 9.0,
+          "radius": 70.0,
+          "cooldown": 0.5
+        },
+        {
+          "damage": 11.0,
+          "radius": 80.0,
+          "cooldown": 0.5
+        },
+        {
+          "damage": 13.0,
+          "radius": 90.0,
+          "cooldown": 0.5
+        }
+      ],
+      "short": "Holy"
+    }
+  },
+  "items": {
+    "boots": {
+      "name": "Swift Boots",
+      "desc": "+10% walking speed.",
+      "max_level": 5,
+      "speed_pct": 0.1,
+      "short": "Boots"
+    },
+    "heart": {
+      "name": "Big Heart",
+      "desc": "+20 max HP and heal 20.",
+      "max_level": 5,
+      "max_hp": 20.0,
+      "heal": 20.0,
+      "short": "Heart"
+    },
+    "magnet": {
+      "name": "Magnet",
+      "desc": "+30 px gem pickup radius.",
+      "max_level": 5,
+      "radius": 30.0,
+      "short": "Magnet"
+    }
+  },
+  "enemies": {
+    "bat": {
+      "name": "Bat",
+      "hp": 8.0,
+      "speed": 100.0,
+      "damage": 5.0,
+      "xp": 1,
+      "radius": 13.0,
+      "size": 1.0
+    },
+    "slime": {
+      "name": "Slime",
+      "hp": 30.0,
+      "speed": 55.0,
+      "damage": 8.0,
+      "xp": 2,
+      "radius": 15.0,
+      "size": 1.0
+    },
+    "ghost": {
+      "name": "Ghost",
+      "hp": 15.0,
+      "speed": 135.0,
+      "damage": 6.0,
+      "xp": 2,
+      "radius": 13.0,
+      "size": 1.0
+    },
+    "demon": {
+      "name": "Demon",
+      "hp": 800.0,
+      "speed": 85.0,
+      "damage": 20.0,
+      "xp": 0,
+      "radius": 28.0,
+      "size": 2.0,
+      "boss": true
+    }
+  },
+  "spawn": {
+    "interval": 1.0,
+    "max_per_tick": 8,
+    "radius": 380.0,
+    "remove_distance": 700.0,
+    "boss_reposition": 600.0,
+    "max_alive": 120,
+    "table": [
+      {
+        "from": 0.0,
+        "types": [
+          "bat"
+        ],
+        "minimum": 12
+      },
+      {
+        "from": 15.0,
+        "types": [
+          "bat"
+        ],
+        "minimum": 20
+      },
+      {
+        "from": 30.0,
+        "types": [
+          "bat",
+          "slime"
+        ],
+        "minimum": 28
+      },
+      {
+        "from": 45.0,
+        "types": [
+          "slime",
+          "ghost"
+        ],
+        "minimum": 36
+      },
+      {
+        "from": 60.0,
+        "types": [
+          "bat",
+          "ghost"
+        ],
+        "minimum": 45
+      },
+      {
+        "from": 75.0,
+        "types": [
+          "bat",
+          "slime",
+          "ghost"
+        ],
+        "minimum": 55
+      },
+      {
+        "from": 90.0,
+        "types": [
+          "bat",
+          "slime"
+        ],
+        "minimum": 55,
+        "boss": true
+      },
+      {
+        "from": 105.0,
+        "types": [
+          "bat"
+        ],
+        "minimum": 75
+      }
+    ]
+  },
+  "progression": {
+    "first_level": 5,
+    "increment": 3,
+    "heal_amount": 30.0
+  },
+  "combat": {
+    "contact_cooldown": 0.5,
+    "spark_hit_radius": 10.0,
+    "projectile_life": 1.4,
+    "gem_speed": 300.0,
+    "max_floaters": 80,
+    "max_particles": 120
+  }
+}
